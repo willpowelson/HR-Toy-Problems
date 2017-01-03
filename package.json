@@ -1,0 +1,25 @@
+{
+  "name": "hrlectureproblems",
+  "version": "1.0.0",
+  "description": "problems to give fellow students",
+  "main": "index.js",
+  "scripts": {
+    "testall": "mocha --require ./node_modules/babel-core/register ./**/*-spec.js",
+    "test": "mocha --require ./node_modules/babel-core/register ./SplitLinkedList/*-spec.js ./LinkedListLoop/*-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willpowelson/HR-Toy-Problems.git"
+  },
+  "author": "Will Powelson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willpowelson/HR-Toy-Problems/issues"
+  },
+  "homepage": "https://github.com/willpowelson/HR-Toy-Problems#readme",
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  }
+}
