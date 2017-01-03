@@ -38,7 +38,19 @@ LinkedList.prototype.addToTail = function(value) {
 
 //Your function here
 LinkedList.prototype.findMiddle = function() {
-
+  var slow = this.head;
+  var fast = this.head;
+  if(fast) {
+    fast = fast.next;
+  }
+  while(fast) {
+    slow = slow.next;
+    fast = fast.next;
+    if(fast) {
+      fast = fast.next
+    }
+  }
+  return slow;
 };
 
 

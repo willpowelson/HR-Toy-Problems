@@ -38,7 +38,22 @@ LinkedList.prototype.addToTail = function(value) {
 //YOUR FUNCTION HERE
 
 LinkedList.prototype.hasLoop = function() {
-
+  var slow = this.head;
+  var fast = this.head;
+  if(fast!== null) {
+    fast = fast.next;
+  }
+  while(fast !== null) {
+    slow = slow.next;
+    fast = fast.next;
+    if(fast) {
+      fast = fast.next
+    }
+    if(slow === fast) {
+      return true;
+    }
+  }
+  return false
 };
 
 
