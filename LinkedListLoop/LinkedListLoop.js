@@ -23,11 +23,17 @@ var LinkedList = function() {
   this.head = null;
 }
 
-LinkedList.prototype.addToHead = function(value) {
-  var tmp = new Node(value);
-  tmp.next = this.head;
-  this.head = tmp;
+LinkedList.prototype.addToTail = function(value) {
+  if (this.head === null) {
+    var tmp = new Node(value);
+    this.head = tmp;
+    this.tail = tmp;
+  } else {
+    this.tail.next = new Node(value);
+    this.tail = this.tail.next;
+  }
 };
+
 
 //YOUR FUNCTION HERE
 
