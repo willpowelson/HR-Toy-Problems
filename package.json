@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "testall": "mocha --require ./node_modules/babel-core/register ./**/*-spec.js",
-    "test": "mocha --require ./node_modules/babel-core/register ./SplitLinkedList/*-spec.js ./LinkedListLoop/*-spec.js"
+    "test": "mocha --require ./node_modules/babel-core/register ./KNumbers/*-spec.js ./ValidEmail/*-spec.js ./ParenthesisPermutations/*-spec.js"
   },
   "repository": {
     "type": "git",
