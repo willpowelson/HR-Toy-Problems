@@ -30,5 +30,5 @@ npm test
 To test all past problems
 
 ```sh
-npm testall
+npm run testall
 ```
