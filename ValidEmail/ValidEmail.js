@@ -27,7 +27,19 @@ Produce an algorithm that will count the possible email addresses of length N
 //YOUR CODE HERE
 
 var ValidEmail = function(strSize) {
-
+  var count = 0;
+  var generator = function(prev, depth, prod) {
+    if(depth === strSize) {
+      count += prod;
+      return;
+    } 
+    if(prev !== '.' && depth !== 0 && depth !== strSize - 1) {
+      generator('.', depth + 1, prod)
+    }
+    generator(null, depth + 1, prod * 52);
+  }
+  if(strSize > 2) generator(null, 0, 1);
+  return count;
 };
 
 //ignore this
