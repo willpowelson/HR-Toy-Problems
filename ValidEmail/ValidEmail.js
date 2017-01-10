@@ -26,21 +26,27 @@ Produce an algorithm that will count the possible email addresses of length N
 
 //YOUR CODE HERE
 
-var ValidEmail = function(strSize) {
-  var count = 0;
-  var generator = function(prev, depth, prod) {
-    if(depth === strSize) {
-      count += prod;
-      return;
+/*
+* Similar to the efficient KNumbers solution, we make use
+* of symmetry breaking to achieve a significantly more efficient solution
+*
+*/
+
+var ValidEmail2 = function(strSize) {
+  var generator = function(prev, depth, weight) {
+    if (depth === strSize) {
+      return weight;
     } 
-    if(prev !== '.' && depth !== 0 && depth !== strSize - 1) {
-      generator('.', depth + 1, prod)
+    var count = 0;
+    if (prev !== '.' && depth !== 0 && depth !== strSize - 1) {
+      count += generator('.', depth + 1, weight)
     }
-    generator(null, depth + 1, prod * 52);
+    return count + generator(null, depth + 1, weight * 52);
   }
-  if(strSize > 2) generator(null, 0, 1);
-  return count;
+  if (strSize > 2) return generator(null, 0, 1);
+  return null;
 };
+
 
 //ignore this
 module.exports = ValidEmail;

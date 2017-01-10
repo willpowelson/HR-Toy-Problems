@@ -20,38 +20,50 @@ e.g. KNumbers(11,3) === 1200
 
 //YOUR CODE HERE
 
-//Efficient solution
+/*
+* More efficient solution
+*
+* This solution makes use of a technique called symmetry breaking,
+* we first note that we don't care about actually generating the
+* solutions, only counting them. Then notice that in every recursive
+* if we chose anything but 0 as our last digit we make identical branches
+* in the recursion tree, 1-50 it doesn't matter.  Instead of generating 
+* those we combine them into one node on the tree and weight it according
+* to the number combined.
+*
+* Big O: approx 1.6^N for all K (you can think of it as 2^N if you want though)
+*/
+
 var KNumbers = function(K, N) {
-  var count = 0;
-  var counter = function(last, depth, prod) {
+  var counter = function(last, depth, weight) {
     if(depth === N) {
-      count += prod;
-      return;
+      return weight;
     }
+    var count = 0;
     if(last) {
-      counter(0, depth+1, prod)
+      count += counter(0, depth+1, weight)
     }
-    counter(1, depth+1, prod*(K-1))  
+    return count + counter(1, depth+1, weight*(K-1))  
   };
-  counter(0, 0, 1);
-  return count
+  return counter(0, 0, 1);
 };
 
-// less efficient solution that may be more familiar in style
+// less efficient solution that generates all valid KNumbers
+// Big O: K^N
 // var KNumbers = function(K, N) {
-//   var count = 0;
 //   var counter = function(last, num) {
 //     if(num === N) {
-//       count++;
-//       return;
+//       return 1
 //     }
+//     var count = 0;
 //     var start = (last === 0) ? 1 : 0;
 //     for(var i = start; i < K; i++) {
-//       counter(i, num+1);
+//       count +=counter(i, num+1);
 //     }
+//     return count;
 //   };
-//   counter(0, 0);
-//   return count
+//   return counter(0,0)
 // };
+
 
 module.exports = KNumbers;
