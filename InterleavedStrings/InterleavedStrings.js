@@ -17,7 +17,20 @@
 
 //YOUR CODE HERE
 var interleavedStrings = function(first, second) {
-
+  var arr = []
+  var generator = function(firstIndex, secondIndex, curr) {
+    if (firstIndex >= first.length) {
+      arr.push(curr + second.substring(secondIndex, second.length));
+    }
+    else if (secondIndex >= second.length) {
+      arr.push(curr + first.substring(firstIndex, first.length));
+    } else {
+      generator(firstIndex + 1, secondIndex, curr + first[firstIndex]);
+      generator(firstIndex, secondIndex + 1, curr + second[secondIndex]);
+    }
+  }
+  generator(0, 0, '')
+  return arr;
 }
 
 //ignore this
