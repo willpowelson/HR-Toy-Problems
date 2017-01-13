@@ -32,3 +32,9 @@ To test all past problems
 ```sh
 npm run testall
 ```
+
+To test a single problem from the root directory (it is imperative you run it from the root directory) run the following:
+
+```sh
+npm run testone PROBLEMNAME/PROBLEMNAME-spec.js
+```

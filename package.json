@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "testall": "mocha --require ./node_modules/babel-core/register ./**/*-spec.js",
-    "test": "mocha --require ./node_modules/babel-core/register ./ReverseLinkedList/*-spec.js ./FlattenLinkedList/*-spec.js"
+    "test": "mocha --require ./node_modules/babel-core/register ./CoinCount/*-spec.js ./InterleavedStrings",
+    "testone": "mocha --require ./node_modules/babel-core/register"
   },
   "repository": {
     "type": "git",
