@@ -6,6 +6,7 @@
 * after the function is run the linked list will be
 * 2->6->3->1
 *
+* Use constant space and linear time for your solution, no nodes should ever be deleted
 */
 
 
