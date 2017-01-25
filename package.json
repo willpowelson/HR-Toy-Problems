@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "testall": "mocha --require ./node_modules/babel-core/register ./**/*-spec.js",
-    "test": "mocha --require ./node_modules/babel-core/register ./CoinCount/*-spec.js ./InterleavedStrings",
+    "test": "mocha --require ./node_modules/babel-core/register ./StringIsomorphism/*-spec.js",
     "testone": "mocha --require ./node_modules/babel-core/register"
   },
   "repository": {
