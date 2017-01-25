@@ -13,3 +13,5 @@ StringIsomorphism('hello', 'zippy') === true
 var StringIsomorphism = function(str1, str2) {
 
 };
+
+module.exports = StringIsomorphism;
